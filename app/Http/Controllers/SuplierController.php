@@ -16,4 +16,18 @@ class SuplierController extends Controller
     {
         return view('suplier.create');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_suplier' => 'required',
+            'nama_suplier' => 'required',
+            'alamat_suplier' => 'required',
+            'no_telp_suplier' => 'required',
+        ]);
+
+        Suplier::create($request->all());
+
+        return redirect()->route('supliers.index')->with('success', 'Suplier created successfully.');
+    }
 }

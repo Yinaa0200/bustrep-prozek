@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;       
 use Illuminate\Database\Seeder;
-use DB;
+use App\Models\Suplier;
 
 class SuplierSeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class SuplierSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('suplier')->insert([
+        Suplier::insert([
             [
                 'kode_suplier' => 'SOO1',
                 'nama_suplier' => 'Suplier 1',

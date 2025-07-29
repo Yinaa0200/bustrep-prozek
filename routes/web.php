@@ -9,8 +9,9 @@ Route::get('/', function () {
 });
 
 //Route Supliers
-Route::get('/supliers', [SuplierController::class,'index']);
-Route::get('/supliers/create', [SuplierController::class,'create']);
+Route::get('/supliers', [SuplierController::class,'index'])->name('supliers.index');
+Route::get('/supliers/create', [SuplierController::class,'create'])->name('supliers.create');
+Route::post('/supliers/create', [SuplierController::class,'store'])->name('supliers.store');
 
 //Route Data Barang
 Route::get('/resouce', [ResourceController::class,'index']);
